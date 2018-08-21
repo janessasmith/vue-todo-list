@@ -6,6 +6,10 @@
         {{ today.day }}
         <br> {{ today.date }}
       </h2>
+      <form class="todo-form">
+        <input type="text" class="left todo-input" v-model="newTodo" v-bind:class="{ active: newTodo }" placeholder="💗Make a list...">
+        <button class="right btn btn-add" v-bind:class="{ active: newTodo }">+</button>
+      </form>
     </section>
   </div>
 </template>
@@ -13,6 +17,11 @@
 <script>
   export default {
     name: 'TodoList',
+    data() {
+      return {
+        newTodo: ''
+      }
+    },
     computed: {
       today: function () {
         var weekday = [
@@ -41,7 +50,6 @@
           day: weekday[today.getDay()], // getDay() 0~6
           date: dd + '-' + mm + '-' + yyyy
         };
-
         return today;
       }
     }
@@ -49,8 +57,7 @@
 
 </script>
 
-// 如果加上scoped会出现什么问题？
+// if add scoped, what will happen？
 <style>
   @import "../assets/css/todo-list.css";
-
 </style>

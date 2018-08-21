@@ -20,6 +20,14 @@ body {
   background: linear-gradient(to right, #f2c94c, #f2994a);
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 h1 {
   margin: 20px 0;
   text-align: center;
@@ -43,4 +51,56 @@ h1 {
   font-size: 1.2rem;
   font-weight: normal;
   color: #2aa198;
+}
+
+.todo-form {
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+input,
+.btn {
+  display: inline-block;
+  padding: .2rem 1rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all ease-in .25s;
+}
+
+input[type='text'] {
+  min-width: 80%;
+}
+
+input:focus {
+  border: 1px solid #2aa198;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, .3);
+}
+
+.btn {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-add {
+  min-width: 17%;
+  color: #fefefe;
+  background: #ddd;
+  pointer-events: none;
+}
+
+.btn-add.active {
+  background: #2aa198;
+  border: 1px solid #2aa198;
+  pointer-events: visible;
+}
+.btn-add.active:hover {
+  background: #218179;
+  border: 1px solid #218179;
 }
